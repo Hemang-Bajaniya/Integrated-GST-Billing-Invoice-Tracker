@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Create Invoice</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">GST Billing - Invoice</a>
+        </div>
+    </nav>
+
+    <div class="container mt-5 pt-4">
+
+        <section>
+            <h2 class="mb-4">Invoice Management</h2>
+
+            <div class="card">
+                <div class="card-header">Create Invoice</div>
+
+                <div class="card-body">
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label>Customer</label>
+                            <select id="customerSelect" class="form-select"></select>
+                        </div>
+                        <div class="col-md-6">
+                            <label>Date</label>
+                            <input type="date" id="invoiceDate" class="form-control">
+                        </div>
+                    </div>
+
+                    <div id="invoiceItems"></div>
+                    <button class="btn btn-secondary btn-sm" id="addItemBtn">+ Add Item</button>
+
+                    <table class="table table-sm mt-4">
+                        <tr>
+                            <td>Subtotal</td>
+                            <td id="subtotal">₹0</td>
+                        </tr>
+                        <tr>
+                            <td>CGST</td>
+                            <td id="cgst">₹0</td>
+                        </tr>
+                        <tr>
+                            <td>SGST</td>
+                            <td id="sgst">₹0</td>
+                        </tr>
+                        <tr class="fw-bold">
+                            <td>Total</td>
+                            <td id="grandTotal">₹0</td>
+                        </tr>
+                    </table>
+
+                    <button class="btn btn-primary" id="generateInvoice">Generate Invoice</button>
+
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="../js/invoices.js" type="module"></script>
+</body>
+
+</html> 
