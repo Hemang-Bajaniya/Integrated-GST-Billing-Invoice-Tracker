@@ -11,11 +11,38 @@
 
 <body>
 
-    <nav class="navbar navbar-dark bg-dark fixed-top">
+    <div id="navbar"></div>
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">GST Billing - Customers</a>
+            <a class="navbar-brand" href="index.html">GST Billing System</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../index.html">Dashboard</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="./customers.html">Customers</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="./products.html">Products</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="./invoices.html">Invoices</a>
+                    </li>
+
+                </ul>
+            </div>
         </div>
-    </nav>
+    </nav> -->
 
     <div class="container mt-5 pt-4">
 
@@ -31,25 +58,58 @@
                 <div class="card-body">
 
                     <div id="customerForm" class="invoice-form mb-3">
-                        <div class="row">
-                            <div class="col-md-6 mb-2">
-                                <input type="text" id="custName" class="form-control" placeholder="Customer Name">
+                        <form id="customerFormEl">
+                            <div class="row">
+
+                                <!-- Customer Name -->
+                                <div class="col-md-6 mb-2">
+                                    <input type="text" id="custName" class="form-control" placeholder="Customer Name"
+                                        required minlength="3">
+                                    <div class="invalid-feedback">
+                                        Customer name must be at least 3 characters.
+                                    </div>
+                                </div>
+
+                                <!-- Email -->
+                                <div class="col-md-6 mb-2">
+                                    <input type="email" id="custEmail" class="form-control" placeholder="Email"
+                                        required>
+                                    <div class="invalid-feedback">
+                                        Please enter a valid email address.
+                                    </div>
+                                </div>
+
+                                <!-- Phone -->
+                                <div class="col-md-6 mb-2">
+                                    <input type="text" id="custPhone" class="form-control" placeholder="Phone" required>
+                                    <div class="invalid-feedback">  
+                                        Phone number must be exactly 10 digits.
+                                    </div>
+                                </div>
+
+                                <!-- Address -->
+                                <div class="col-md-12 mb-2">
+                                    <input type="text" id="custAddress" class="form-control" placeholder="Address"
+                                        required minlength="5">
+                                    <div class="invalid-feedback">
+                                        Address must be at least 5 characters.
+                                    </div>
+                                </div>
+
+                                <!-- Buttons -->
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary" id="saveCustomer">
+                                        Save
+                                    </button>
+                                    <button type="button" class="btn btn-secondary" id="cancelCustomer">
+                                        Cancel
+                                    </button>
+                                </div>
+
                             </div>
-                            <div class="col-md-6 mb-2">
-                                <input type="email" id="custEmail" class="form-control" placeholder="Email">
-                            </div>
-                            <div class="col-md-6 mb-2">
-                                <input type="text" id="custPhone" class="form-control" placeholder="Phone">
-                            </div>
-                            <div class="col-md-12 mb-2">
-                                <input type="text" id="custAddress" class="form-control" placeholder="Address">
-                            </div>
-                            <div class="col-12">
-                                <button class="btn btn-primary" id="saveCustomer">Save</button>
-                                <button class="btn btn-secondary" id="cancelCustomer">Cancel</button>
-                            </div>
-                        </div>
+                        </form>
                     </div>
+
 
                     <table class="table table-hover">
                         <thead class="table-light">
@@ -69,8 +129,11 @@
 
     </div>
 
+    <script src="../components/navbar.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <script src="../js/customers.js" type="module"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+
+    <script src="../modules/customers.js" type="module"></script>
 </body>
 
 </html>
