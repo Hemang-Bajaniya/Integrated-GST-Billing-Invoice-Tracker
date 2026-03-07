@@ -1,0 +1,9 @@
+// Add this to your Program.cs or Startup.cs dependency injection configuration:
+
+// In the services registration section, add:
+builder.Services.AddScoped<GstMappingService>();
+
+// Or if using traditional Startup.cs:
+services.AddScoped<GstMappingService>();
+
+// This service can now be injected into controllers and other services
